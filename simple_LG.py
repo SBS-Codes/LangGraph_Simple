@@ -3,7 +3,6 @@
 import random
 from typing import Literal
 from typing_extensions import TypedDict
-# from IPython.display import Image, display
 from langgraph.graph import StateGraph, START, END
 
 class State(TypedDict):
@@ -53,5 +52,6 @@ graph = builder.compile()
 result = graph.invoke({"graph_state" : "Hi, this is Shashi."})
 print("Final graph state:", result)
 
-# View
-# display(Image(graph.get_graph().draw_mermaid_png()))
+with open("graph.png", "wb") as image_file:
+    image_file.write(graph.get_graph().draw_mermaid_png())
+print("Graph diagram saved to graph.png")

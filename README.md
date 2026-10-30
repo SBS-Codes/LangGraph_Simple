@@ -19,10 +19,10 @@ The graph state is stored in a `TypedDict` called `State`, and each node updates
 
 ## Python dependencies
 
-Install the required packages:
+Install the required package:
 
 ```bash
-python3 -m pip install langgraph typing_extensions ipython
+python3 -m pip install langgraph typing_extensions
 ```
 
 If you are using a virtual environment, activate it first and then run the same command.
@@ -44,6 +44,7 @@ Final graph state: {'graph_state': 'Hi, this is Shashi. I am sad!'}
 ```
 
 The exact result may vary because the script randomly chooses between `node_2` and `node_3`.
+The script also saves a diagram of the graph as `graph.png` in the current working directory.
 
 ## Key LangGraph concepts shown
 
@@ -124,7 +125,7 @@ print("Final graph state:", result)
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install --upgrade pip
-python3 -m pip install langgraph typing_extensions ipython
+python3 -m pip install langgraph typing_extensions
 python3 simple_LG.py
 ```
 
