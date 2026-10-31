@@ -16,6 +16,8 @@ The graph state is stored in a `TypedDict` called `State`, and each node updates
 
 - `simple_LG.py` — the complete example script
 - `email_LG.py` — an email-processing workflow that uses a local Llama model through Ollama
+- `LANGGRAPH_API_README.md` — reusable templates for the LangGraph APIs used in this repository
+- `EMAIL_README.md` — logic, inputs, sample output, and LangGraph explanations for the email workflow
 - `README.md` — setup and usage notes
 
 ## Python dependencies
