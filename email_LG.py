@@ -220,3 +220,7 @@ spam_result = compiled_graph.invoke({
     "email_draft": None,
     "messages": []
 })
+
+with open("email_graph.png", "wb") as image_file:
+    image_file.write(compiled_graph.get_graph().draw_mermaid_png())
+print("Graph diagram saved to email_graph.png")
