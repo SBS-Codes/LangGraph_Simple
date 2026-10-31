@@ -15,6 +15,7 @@ The graph state is stored in a `TypedDict` called `State`, and each node updates
 ## Project files
 
 - `simple_LG.py` — the complete example script
+- `email_LG.py` — an email-processing workflow that uses a local Llama model through Ollama
 - `README.md` — setup and usage notes
 
 ## Python dependencies
@@ -26,6 +27,12 @@ python3 -m pip install langgraph typing_extensions
 ```
 
 If you are using a virtual environment, activate it first and then run the same command.
+
+The email workflow additionally requires LangChain's Ollama integration:
+
+```bash
+python3 -m pip install langchain-ollama
+```
 
 ## How to run
 
@@ -45,6 +52,20 @@ Final graph state: {'graph_state': 'Hi, this is Shashi. I am sad!'}
 
 The exact result may vary because the script randomly chooses between `node_2` and `node_3`.
 The script also saves a diagram of the graph as `graph.png` in the current working directory.
+
+## Running the email workflow
+
+The email workflow calls a local Ollama server using the `llama3.2-local:latest` model by default. Make sure Ollama is running and that model is available locally, then run:
+
+```bash
+python3 email_LG.py
+```
+
+To use a different locally available Ollama model, set `OLLAMA_MODEL` before running the script:
+
+```bash
+OLLAMA_MODEL=llama:latest python3 email_LG.py
+```
 
 ## Key LangGraph concepts shown
 
